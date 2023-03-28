@@ -1,51 +1,14 @@
-<h1 align=center>_printf Proyect, Holberton School</h1>
+<img src="https://i.postimg.cc/9MfDHrdW/Printf-proyect.png)" width="950" height="120">
 
-<h2>Peers:
-</h2>
-<ul>
-<li><a href="https://github.com/444sami"> <strong>Samara González</strong> </a> </li>
-<li> <a href="https://github.com/oxan33"> <strong> Christopher Oxandabarat</strong> </a> </li>
- </ul>
-<h2>
-        Index
-</h2>
-         <ul>
-                <li>
-                        <strong> _printf </strong> </a>
-                </li>
-                <li>
-                        <strong> Description </strong> </a>
-                </li>
-                <li>
-                        <strong> Compilation </strong> </a>
-                </li>
-                <li>
-                       <strong> Examples </strong> </a>
-                </li>
-                <li>
-                       <strong> Testing </strong> </a>
-                </li>
-                <li>
-                        <strong> Requirements </strong> </a>
-                </li>
-                <li>
-                        <strong> Authorized functions and macros </strong> </a>
-                </li>
-                <li>
-                       <strong> Flowchart </strong> </a>
-                </li>
-<h2>
-<div id="printf">
-        <strong>printf</strong>
-</h2>
-                <p>printf is the C language function to do formatted printing.</p>
-
+<a href="https://github.com/444sami"> <strong>Samara González</strong>, </a>
+ <a href="https://github.com/coxan33"> <strong> Christopher Oxandabarat</strong> </a>
+ <h2>
 <div id="Description">
         <strong>Description</strong>
 </h2>
-        <p> A more limited recreation of the printf function where only certain conversion specifiers are implemented with other custom ones that aren't in the base printf.</p>
-  <div id="Table">
-    <strong>Specifier table</strong>
+                <p>printf <code>int printf(const char *format, ...);</code> is the C language function to do formatted printing, it's return value it's an int. In the most simple case, printf takes one argument: a string of characters to be printed, but if we want to print the content of variables we have to use specifiers (percent sign and a letter), so we add another argument.
+</p>
+</h2>
 <table>
   <tr>
     <th>Conversion specifier</th>
@@ -68,46 +31,40 @@
     <td>Prints %</td>
   </tr>
 </table>
-  
-<div id="Compilation">
-        <strong>Compilation</strong>
+
+<p>How does printf work? it starts printing the characters it finds in the first argument, when it finds a percent (specifier) it goes to the next argument and uses it value, printing it according to that specification. It then returns to printing a character at a time.</p>
+<table>
+  <tr>
+    <th>Parameter passed</th>
+    <th>printf Produces</th>
+  </tr>
+  <tr>
+    <td>("%d",0)</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>("%s", "Let's try to printf a simple sentence.\n")</td>
+    <td>Let's try to printf a simple sentence.</td>
+  </tr>
+  <tr>
+    <td>("My name starts with %c.\n",'S')</td>
+    <td>My name starts with S.
+</td>
+  </tr>
+</table>
+The function prints characters, but the value of the return is the amount of characters printed excluding the null char.
+
+<h2>
+        <strong>Flowchart</strong>
 </h2>
+        <img src="" alt="Flowchart" width="800" height="800">
+
+<h2>Requirements of the project:</h2>
+<h3>Compilation</h3>
                 <p> gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c </p>
-  
-<h2>
-<div id="Examples">
-        <strong>Examples</strong>
-</h2>
-<p> To print a simple sentence: </p>
-
-        #include "main.h"
-        _printf("Let's try to printf a simple sentence.\n");
-        
-<p> Or also: </p>
-
-        #include "main.h"
-        _printf("%s", "Let's try to printf a simple sentence.\n");
-
-<p> To print the maximum value for an integer type: </p>
-
-        #include "main.h"
-        #include <limits.h>
-        _printf("%d", INT_MAX);
-<hr>
-<h2>
-<div id="Testing">
-        <strong>Testing</strong>
-</h2>
-        <img src="https://i.ibb.co/Mgygv64/Testing.png" alt="Testing">
-<hr>
-<h2>
-<div id="Requirement">
-        <strong>Requirements</strong>
-</h2>
-<h3>
-        General
-</h3>
-        <ul>
+                <hr>
+<h3>General</h3>
+<ul>
                 <li> Allowed editors: vi, vim, emacs </li>
                 <li> All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89 </li>
                 <li> All your files should end with a new line </li>
@@ -124,10 +81,7 @@
                 <li> Note that we will not provide the _putchar function for this project </li>
         </ul>
 <hr>
-<h2>
-<div id="More functions">
-        <strong>Authorized functions and macros</strong>
-</h2>
+<h3>Authorized functions and macros</h3>
                 <li>
                         write (man 2 write)
                 </li>
@@ -150,10 +104,5 @@
                         va_arg (man 3 va_arg)
                 </li>
         </ul>
-
 <hr>
-<h2>
-<div id="Flowchart">
-        <strong>Flowchart</strong>
-</h2>
-        <img src="" alt="Flowchart" width="800" height="800">
+Samara González, Christopher Oxandabarat. Cohort 20.
