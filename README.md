@@ -57,7 +57,7 @@ The function prints characters, but the value of the return is the amount of cha
 <h2>
         <strong>Flowchart</strong>
 </h2>
-        <img src="" alt="Flowchart" width="800" height="800">
+        <img src="https://i.postimg.cc/qBSXVKpV/flowchart-printf.png"width="611" height="711">
 
 <h2>Requirements of the project:</h2>
 <h3>Compilation</h3>
