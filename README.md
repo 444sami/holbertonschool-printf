@@ -1,4 +1,4 @@
-<img src="https://i.postimg.cc/9MfDHrdW/Printf-proyect.png)" width="950" height="120">
+<img src="https://i.postimg.cc/9MfDHrdW/Printf-proyect.png)" width="1050" height="120">
 
 <a href="https://github.com/444sami"> <strong>Samara González</strong>, </a>
  <a href="https://github.com/coxan33"> <strong> Christopher Oxandabarat</strong> </a>
