@@ -1,28 +1,27 @@
-#include "main.h"
-/**
- * _spec - finds function to execute
- * @s: specifier passed
- */
-int _spec(char *s)(va_list)
-{
-	int iterador = 0;
+#ifndef MAIN_H
+#define MAIN_H
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdarg.h>
+#include <stdio.h>
 
-	spec_t spec[] = {
-		{"s", get_s},
-		{"c", get_c},
-		{"d", get_di},
-		{"i", get_di},
-		{"%", get_prc}
-		{NULL, NULL}
-	};
-	
-	while (spec[i].e)
-	{
-		if (*s == spec[i].e)
-		{
-			return (spec[i].f);
-		}
-		iterador++;
-	}
-	return (0);
-}
+/**
+ * struct spec - structure specifiers and functions
+ * @e - specifier
+ * @f - function
+ */
+typedef struct spec
+{
+	char e;
+	int (*f)(va_list);
+} spec_t;
+
+int (*_spec(char *s))(va_list);
+int get_s(va_list);
+int get_c(va_list);
+int get_prc(va_list);
+int get_di(va_list);
+int _putchar(char c);
+int _printf(const char *format, ...);
+
+#endif

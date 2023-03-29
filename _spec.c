@@ -3,26 +3,24 @@
  * _spec - finds function to execute
  * @s: specifier passed
  */
-int _spec(char *s)(va_list)
+int (*_spec(char *s))(va_list)
 {
 	int iterador = 0;
 
 	spec_t spec[] = {
-		{"s", get_s},
-		{"c", get_c},
-		{"d", get_di},
-		{"i", get_di},
-		{"%", get_prc}
-		{NULL, NULL}
+		{'s', get_s},
+		{'c', get_c},
+		{'d', get_di},
+		{'i', get_di},
+		{'%', get_prc},
+		{'\0', '\0'}
 	};
 	
-	while (spec[i].e)
+	while (iterador < 5)
 	{
-		if (*s == spec[i].e)
-		{
-			return (spec[i].f);
-		}
+		if (*(spec[iterador]).e == *s)
+			break;
 		iterador++;
 	}
-	return (0);
+	return (spec[iterador].f);
 }
