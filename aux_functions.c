@@ -4,10 +4,9 @@
  * @args: arguments
  * Return: lenght of string
  */
-int get_s(va_list)
+int get_s(va_list args)
 {
         int iterador = 0;
-        int count = 0;
         char *str = NULL;
         str = va_arg(args, char *);
         while (str[iterador])
@@ -23,9 +22,9 @@ int get_s(va_list)
  * @args: Arguments
  * Return: 1
  */
-int get_c(va_list)
+int get_c(va_list args)
 {
-        _putchar(va_arg(int));
+        _putchar(va_arg(args, int));
         return (1);
 }
 
@@ -34,16 +33,16 @@ int get_c(va_list)
  * @args: Argument
  * Return: number of characters
  */
-int get_d(va_list)
+int get_d(va_list args)
 {
         int i;
         int div = 1;
         int count = 0;
         unsigned int num;
-        i = va_arg(int);
+        i = va_arg(args, int);
         if (i < 0)
         {
-                counter += _putchar('-');
+                count += _putchar('-');
                 num = i * -1;
         }
         else
@@ -66,16 +65,16 @@ int get_d(va_list)
  * @args: Argument
  * Return: number of characters
  */
-int get_i(va_list)
+int get_i(va_list args)
 {
         int i;
         int div = 1;
         int count = 0;
         unsigned int num;
-        i = va_arg(int);
+        i = va_arg(args, int);
         if (i < 0)
         {
-                counter += _putchar('-');
+                count += _putchar('-');
                 num = i * -1;
         }
         else
