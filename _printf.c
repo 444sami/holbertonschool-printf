@@ -5,7 +5,6 @@
  */
 int _printf(const char *format, ...)
 {
-	int iterador = 0;
 	int count = 0;
 	int (*f)(va_list args);
 	va_list args;
@@ -16,16 +15,13 @@ int _printf(const char *format, ...)
 	}
 	va_start(args, format);
 
-	for (count = 0; count != '\0'; count++)
+	for (count = 0; format[count] != '\0'; count++)
 	{
-		while (format[iterador])
-		{
-			if (format[iterador] == '%' && format[iterador + 1] != '%')
-				f = _spec(&format[iterador + 1]);
-			iterador++;
-			if (format[iterador + 1] == '%')
+			if (format[count] == '%' && format[count + 1] != '%')
+				f = _spec(format[count + 1]);
+			if (format[count] == '%' && format[count + 1] == '%')
 				_putchar('%');
-		}
+		_putchar(format[count]);
 	}
 	(void)f;
 	va_end(args);
