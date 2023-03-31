@@ -7,8 +7,8 @@
 
 /**
  * struct spec - structure specifiers and functions
- * @e - specifier
- * @f - function
+ * @e: specifier
+ * @f: function
  */
 typedef struct spec
 {
