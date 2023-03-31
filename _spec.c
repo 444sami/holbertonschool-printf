@@ -12,14 +12,18 @@ int (*_spec(const char format))(va_list)
 		{'c', get_c},
 		{'d', get_d},
 		{'i', get_i},
+		{'u', get_u},
+		{'%', get_prc},
 		{'\0', '\0'}
 	};
 	
-	while (iterador < 4)
+	while (iterador < 6)
 	{
 		if ((spec[iterador]).e == format)
 			return (spec[iterador].f);
 		iterador++;
 	}
+	_putchar('%');
+	_putchar(format);
 	return (0);
 }

@@ -6,24 +6,33 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
+	int iterador = 0;
 	int (*f)(va_list args);
 	va_list args;
 
-	if (!format)
-	{
+	if (format == NULL)
 		return (-1);
-	}
+
 	va_start(args, format);
 
-	for (count = 0; format[count] != '\0'; count++)
+	while (format[iterador]) 
 	{
-			if (format[count] == '%' && format[count + 1] != '%')
-				f = _spec(format[count + 1]);
-			if (format[count] == '%' && format[count + 1] == '%')
-				_putchar('%');
-		_putchar(format[count]);
+		if (format[iterador] == '%')
+		{
+			f = _spec(format[iterador + 1]);
+			if (f != NULL)
+			{
+				count += f(args);
+			}
+				iterador += 2;
+		}
+		else
+		{
+			_putchar(format[iterador]);
+			count++;
+			iterador++;
+		}
 	}
-	(void)f;
 	va_end(args);
 	return (count);
 }

@@ -21,6 +21,8 @@ int get_s(va_list args);
 int get_c(va_list args);
 int get_d(va_list args);
 int get_i(va_list args);
+int get_u(va_list args);
+int get_prc(va_list args);
 int _putchar(char c);
 int _printf(const char *format, ...);
 

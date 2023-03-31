@@ -7,8 +7,11 @@
 int get_s(va_list args)
 {
         int iterador = 0;
-        char *str = NULL;
+        char *str;
         str = va_arg(args, char *);
+
+	if (str == NULL)
+		str = "(null)";
         while (str[iterador])
         {
                 _putchar(str[iterador]);
@@ -90,4 +93,40 @@ int get_i(va_list args)
                 div = div / 10;
         }
         return (count);
+}
+/**
+ * get_u - selects a number option
+ * @args: Argument
+ * Return: number of characters
+ */
+int get_u(va_list args)
+{
+        unsigned int i;
+        int div = 1;
+        int count = 0;
+        unsigned int num;
+        i = va_arg(args, int);
+
+        num = i;
+	while (num / div > 9)
+		div = div * 10;
+        while (div != 0)
+        {
+                count += _putchar((num / div) + '0');
+                num = num % div;
+                div = div / 10;
+        }
+        return (count);
+}
+
+/**
+ * get_prc - Print a Character
+ * @args: Arguments
+ * Return: 1
+ */
+int get_prc(va_list args)
+{
+        (void)args;
+	_putchar('%');
+        return (1);
 }
