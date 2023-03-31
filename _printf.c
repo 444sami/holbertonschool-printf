@@ -2,6 +2,7 @@
 /**
  * _printf - produces output according to a format
  * @format: string to be printed
+ * Return: count
  */
 int _printf(const char *format, ...)
 {
@@ -14,8 +15,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(args, format);
-
-	while (format[iterador]) 
+	while (format[iterador])
 	{
 		if (format[iterador] == '%')
 		{

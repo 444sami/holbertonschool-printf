@@ -1,7 +1,8 @@
 #include "main.h"
 /**
  * _spec - finds function to execute
- * @s: specifier passed
+ * @format: specifier passed
+ * Return: function
  */
 int (*_spec(const char format))(va_list)
 {
@@ -16,7 +17,7 @@ int (*_spec(const char format))(va_list)
 		{'%', get_prc},
 		{'\0', '\0'}
 	};
-	
+
 	while (iterador < 6)
 	{
 		if ((spec[iterador]).e == format)
